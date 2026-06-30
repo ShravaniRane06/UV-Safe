@@ -1,0 +1,257 @@
+/* Style for the main body */
+body {
+  background-image: url('./image.png');
+  background-size: cover;
+}
+
+/* Style for the website font */
+
+.lead {
+  font-family: "Luxurious Roman", serif;
+  color: #000000;
+}
+
+#content {
+  background-color: #ffd271;
+  opacity: 0.85;
+}
+
+/* style for header */
+#blog {
+  color: #000000;
+  font-family: "Parisienne", cursive;
+}
+
+.blog-name {
+  opacity: 0.9;
+  background-color: #2b2b2b;
+}
+
+/* Style for the content name */
+.fw-bold {
+  margin-bottom: 10px;
+  font-family: "Luxurious Roman", serif;
+}
+
+/* UV Scale Styles */
+.low {
+  border: #029302 2px solid;
+  background: linear-gradient(to bottom, #c3f95e, #50ff50);
+}
+
+.medium {
+  border: #b0ba00 2px solid;
+  background: linear-gradient(to bottom, #f5fa98, #f2ff00);
+}
+
+.high {
+  border: #ff8c00 2px solid;
+  background: linear-gradient(to bottom, #ffb347, #ff8c00);
+}
+
+.very-high {
+  border: #ff0000 2px solid;
+  background: linear-gradient(to bottom, #ff7f7f, #ff0000);
+}
+
+.extreme {
+  border: #590071 2px solid;
+  background: linear-gradient(to bottom, #e29fff, #b917e6);
+}
+
+.uv {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-behavior: smooth;
+  color: #000000;
+}
+
+.card-body {
+  min-width: 250px;
+  border-radius: 15px;
+  padding-left: 10px;
+}
+
+/* Scrollbar styles */
+.uv::-webkit-scrollbar {
+  display: none;
+}
+
+.uv {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#scroll-right {
+  position: absolute;
+  font-size: 20px;
+}
+
+
+/* style for card flip */
+.card-flip {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card-flip-inner {
+  border: #ffebb1 2px solid;
+  border-radius: 10px;
+}
+
+.card-front {
+  display: flex;
+  color: #000000;
+  transition: transform 0.25s ease-in-out;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-top: 2px;
+  padding: 12px 18px;
+}
+
+.card-front h5 {
+  margin: 0;
+  font-size: 1.2rem;
+  /* adjust as needed */
+}
+
+.card-back {
+  color: #101010;
+  display: none;
+  padding: 10px 22px 0px;
+  line-height: 1.6;
+}
+
+
+.symbol {
+  font-size: 20px;
+}
+
+.card-back.show {
+  display: block;
+  padding-top: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* style for check */
+
+#Check {
+  text-align: center;
+}
+
+.button {
+  border: #fff5d6 2px solid;
+  border-radius: 10px;
+  padding: 15px;
+  background: transparent;
+}
+
+.lead {
+  font-size: 1.2rem;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+#manualForm {
+  gap: 10px;
+  margin-top: 25px;
+}
+
+#result {
+  margin-top: 25px;
+}
+
+input[name="latitude"],
+input[name="longitude"] {
+  width: 250px;
+  padding: 10px;
+  border-radius: 5px;
+  border: #fff5d6 2px solid;
+  background: transparent;
+  color: #101010;
+}
+
+#list {
+  text-align: left;
+  margin-left: 50px;
+}
+
+/* footer style */
+.footer {
+  margin-top: 30px;
+  padding: 7px 5px;
+  background: #2b2b2b;
+  color: #fff;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.footer h4 {
+  margin-bottom: 5px;
+}
+
+.footer p {
+  margin: 3px 0;
+  color: #ddd;
+}
+
+.footer hr {
+  width: 60%;
+  margin: 20px auto;
+  border-color: #666;
+}
+
+/* toggle */
+body.dark-mode {
+  background: #1f1f1f;
+  color: white;
+}
+
+body.dark-mode #content {
+  background: #2c2c2c;
+}
+
+body.dark-mode .fw-bold {
+  color: #fff;
+}
+
+body.dark-mode .lead {
+  color: #fff;
+}
+
+body.dark-mode .card-flip *{
+  color: #fff;
+}
+
+body.dark-mode #header{
+  background-color: #111;
+}
+
+body.dark-mode .footer {
+  background: #111;
+}
+
+body.dark-mode a {
+  color: white;
+}
+
+/* font styles */
+.parisienne-regular {
+  font-family: "Parisienne", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.delius-swash-caps-regular {
+  font-family: "Delius Swash Caps", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.luxurious-roman-regular {
+  font-family: "Luxurious Roman", serif;
+  font-weight: 400;
+  font-style: normal;
+}

@@ -1,0 +1,119 @@
+<%- include('./partials/header.ejs') %>
+
+    <!--FAQs-->
+    <div class="container px-0 py-3" id="FAQs">
+        <div class="row p-4 pb-3 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg" id="content">
+            <h1 class="display-6 fw-bold lh-1 ">FAQs</h1>
+            <div class="card-flip">
+                <div class="card-flip-inner">
+                    <div class="card-front">
+                        <h5>What is UV Index?</h5>
+                        <span class="symbol">+</span>
+                    </div>
+                    <div class="card-back show">
+                        <p>The UV Index is an international scale that measures the intensity of ultraviolet (UV)
+                            radiation from the sun. A higher UV Index means a greater risk of skin and eye damage,
+                            so more protection is recommended.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-flip">
+                <div class="card-flip-inner">
+                    <div class="card-front">
+                        <h5>What UV level is considered dangerous?</h5>
+                        <span class="symbol">+</span>
+                    </div>
+                    <div class="card-back">
+                        <p>A UV Index of 6 or higher is considered high. At these levels, prolonged sun exposure can
+                            increase the risk of sunburn and skin damage. Wearing sunscreen, protective clothing,
+                            and sunglasses is recommended.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-flip">
+                <div class="card-flip-inner">
+                    <div class="card-front">
+                        <h5>Do I need sunscreen on cloudy days?</h5>
+                        <span class="symbol">+</span>
+                    </div>
+                    <div class="card-back">
+                        <p>Yes, you should still use sunscreen on cloudy days. UV rays can penetrate through clouds
+                            and cause skin damage, even when it's not sunny.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-flip">
+                <div class="card-flip-inner">
+                    <div class="card-front">
+                        <h5>How often should I reapply sunscreen?</h5>
+                        <span class="symbol">+</span>
+                    </div>
+                    <div class="card-back">
+                        <p>It is recommended to reapply sunscreen every two hours, or more frequently if you are
+                            swimming or sweating.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-flip">
+                <div class="card-flip-inner">
+                    <div class="card-front">
+                        <h5>Can UV rays harm my eyes?</h5>
+                        <span class="symbol">+</span>
+                    </div>
+                    <div class="card-back">
+                        <p>Yes, UV rays can harm your eyes. Prolonged exposure to UV radiation can lead to
+                            cataracts, corneal damage, and other eye conditions. It's important to wear sunglasses
+                            that block UV rays to protect your eyes.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-flip">
+                <div class="card-flip-inner">
+                    <div class="card-front">
+                        <h5>What SPF should I use?</h5>
+                        <span class="symbol">+</span>
+                    </div>
+                    <div class="card-back">
+                        <p>It is recommended to use a broad-spectrum sunscreen with an SPF of at least 30. This will
+                            provide adequate protection against both UVA and UVB rays.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-flip">
+                <div class="card-flip-inner">
+                    <div class="card-front">
+                        <h5>How does SunSafe calculate the UV Index?</h5>
+                        <span class="symbol">+</span>
+                    </div>
+                    <div class="card-back">
+                        <p>SunSafe uses your current location (with your permission) and retrieves real-time UV data
+                            from the OpenUV API to provide personalized UV information and recommendations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const quest = document.querySelectorAll(".card-front");
+
+        quest.forEach(question => {
+        question.addEventListener("click", () => {
+
+            const answer = question.nextElementSibling;
+            const symbol = question.querySelector(".symbol");
+    
+            answer.classList.toggle("show");
+    
+            if (answer.classList.contains("show")) {
+                symbol.textContent = "−";   // Minus sign
+            } else {
+                symbol.textContent = "+";
+            }
+
+            }); 
+        });
+
+    </script>
+
+    <%- include('./partials/footer.ejs') %>

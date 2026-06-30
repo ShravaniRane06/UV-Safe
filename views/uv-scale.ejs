@@ -1,0 +1,46 @@
+<%- include('./partials/header.ejs') %>
+
+<!--UV-scale-->
+<div class="container px-4 py-3" id = "Scale">
+    <div class="row p-4 pb-3 pe-lg-0 pt-lg-6 align-items-center rounded-3 border shadow-lg" id = "content">
+        <div class="col-lg-7 p-2 p-lg-4 pt-lg-2" style="margin-bottom: 10px ;">
+            <h3 class="display-6 fw-bold lh-3 ">What is UV Index?</h3>
+            <p class="lead">
+                The UV Index measures the strength of ultraviolet
+                radiation from the sun.
+                The higher the number, the greater the risk of
+                skin and eye damage.
+            </p>
+            <h5>UV Scale:</h5>
+            <div class = "uv scroll"> 
+             <div class="card-body low" style = "padding: 10px;">
+                <h3>Low</h3>
+                <p>Minimal risk. Enjoy outdoors safely, but use sunglasses on bright days.</p>
+             </div>
+              <div class="card-body medium" style = "padding: 10px;">
+                <h3>Medium</h3>
+                <p>Moderate risk. Take precautions, especially if you have fair skin or are sensitive to the sun.</p>
+              </div>
+              <div class="card-body high" style = "padding: 10px;">
+                <h3>High</h3>
+                <p>High risk. Protect yourself by seeking shade, wearing protective clothing, and applying sunscreen.</p>
+              </div>
+              <div class="card-body very-high" style = "padding: 10px;">
+                <h3>Very High</h3>
+                <p>Very high risk. Take extra precautions. Avoid being outside during midday hours and seek shade.</p>
+              </div>
+              <div class="card-body extreme" style = "padding: 10px;">
+                <h3>Extreme</h3>
+                <p>Extreme risk. Take all precautions. Avoid being outside during midday hours and seek shade.</p>
+              </div>
+           </div>
+           <p class="lead" id="scroll-right">← Swipe to view more →</p>
+        </div>
+        
+        <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg"> <img class="rounded-lg-3"
+                src="uv-scale.png" alt="" width="480"> 
+        </div>
+    </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>

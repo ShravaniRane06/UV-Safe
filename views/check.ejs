@@ -1,0 +1,171 @@
+<%- include('./partials/header.ejs') %>
+
+    <div class="container px-4 py-3" id="Check">
+        <div class="row p-4 pb-4 pe-lg-0 pt-lg-6 align-items-center rounded-3 border shadow-lg" id="content">
+            <div class="col-lg-7 p-3 p-lg-1 pt-lg-3">
+                <% if(uv == null){ %>
+                <div class="UV-data">
+                <h3 class="display-6 fw-bold lh-1 ">☀️ Check Today's UV Index</h3>
+                <p class="lead" style="margin-bottom: 10px;">Your location helps us provide accurate UV information.</p>
+                <button class="button lead" id="useLocationBtn">Use your current UV location</button>
+                <form id="locationForm" action="/check" method="POST">
+                    <input type="hidden" id="latitude" name="latitude">
+                    <input type="hidden" id="longitude" name="longitude">
+                </form>
+                <p class="lead" id="OR">OR</p>
+                <button class="button lead" id="manualLocationBtn">Enter coordinates manually</button>
+                <div id="manualForm" style="display: none;">
+                    <h3 class="display-7 fw-bold lh-3 ">Enter Coordinates</h3>
+                    <form action="/check" method="POST">
+                        <div class="manualform">
+                            <input type="text" name="latitude" placeholder="Latitude(from -90 to 90)" required>
+                            <input type="text" name="longitude" placeholder="Longitude(from -180 to 180)" required>
+                        </div>
+                        <button type="submit" class="button lead" id="resultBtn">Check UV Index</button>
+                    </form>
+                </div>
+                </div>
+                <% } else {%>
+                <div id="result">
+                    <% if(uv !=null) %>
+                    <div class="result-card">
+                        <h3 class="display-6 fw-bold">Your UV Index</h3>
+                        <h1 id="uv">
+                            <%= uv %>
+                        </h1>
+                        <div id="checkbox">
+                        <% if(uv>=0 && uv<=2) {%>
+                        <div class="row ">
+                         <div class="col-lg-6 ">
+                         <ul id="list">
+                         <li>Sunglasses (recommended)</li>
+                         <li>Stay hydrated</li></ul>
+                         </div>
+                         <div class="col-lg-6 ">
+                         <ul id="list">
+                         <li>Sunscreen (optional for short exposure)</li>
+                         <li>Seek shade</li>
+                         </ul>
+                         </div>
+                        </div>
+                        <% } %>
+                        <% if(uv>=3 && uv<=5) {%>
+                        <div class="row ">
+                         <div class="col-lg-6 ">
+                         <ul id="list">
+                         <li>Apply SPF 30+ sunscreen </li>
+                         <li>Wear sunglasses</li>
+                         <li>Drink plenty of water</li>
+                         </ul>
+                         </div>
+                         <div class="col-lg-6">
+                         <ul id="list">
+                         <li>Wear a hat if outdoors for long periods</li>
+                         <li>Stay in shade during midday</li>
+                         </ul>
+                         </div>
+                         </div>
+                        <% } %>
+                        <% if(uv>=6 && uv<=7) {%>
+                         <div class="row ">
+                         <div class="col-lg-6 ">
+                         <ul id="list"> 
+                         <li>SPF 30+ sunscreen</li>
+                         <li>UV-protective sunglasses</li>
+                         <li>Seek shade whenever possible</li>
+                         </ul>
+                         </div>
+                         <div class="col-lg-6 ">
+                         <ul id="list">
+                         <li>Wide-brim hat</li>
+                         <li>Protective clothing</li>
+                         <li>Stay hydrated</li>
+                         </ul>
+                         </div>
+                         </div>
+                        <% } %>
+                        <% if(uv>=8 && uv<=10) {%>
+                         <div class="row ">
+                         <div class="col-lg-6 ">
+                         <ul id="list">
+                         <li>SPF 50+ sunscreen</li>
+                         <li>Reapply sunscreen every 2 hours</li>
+                         <li>Avoid direct sun (10 AM–4 PM)</li>
+                         </ul>
+                         </div>
+                         <div class="col-lg-6 ">
+                         <ul id="list">
+                         <li>Wear UV sunglasses </li>
+                         <li>Hat & long sleeves</li>
+                         <li>Stay in shade</li>
+                         <li>Drink plenty of water</li>
+                         </ul>
+                         </div>
+                         </div>
+                        <% } %>
+                        <% if(uv>=11){%>
+                         <div class="row ">
+                         <div class="col-lg-6 ">
+                         <ul id="list">
+                          <li>50+ sunscreen</li>
+                          <li>Reapply every 2 hours</li>
+                          <li>UV sunglasses</li>
+                          <li>Wide-brim hat</li>
+                          </ul>
+                          </div>
+                         <div class="col-lg-6 ">
+                         <ul id="list">
+                          <li>Full protective clothing</li>
+                          <li>Stay indoors if possible</li>
+                          <li>Avoid outdoor activities (10 AM–4 PM)</li>
+                          <li>Stay hydrated</li>
+                          </ul>
+                          </div>
+                          </div>
+                        <% } %>
+                        </div>
+                    </div>
+                    <a href="/check"><button class="btn btn-warning" id="changeloc">Check for another location</button></a>
+                    <%  %>
+                </div>
+                <% } %>
+            </div>  
+            <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg"> <img class="rounded-lg-3"
+                src="uvp.png" alt="" width="580" > 
+        </div>
+        </div>
+    </div>
+
+    <script>
+
+        document.getElementById("manualLocationBtn").addEventListener("click", function () {
+            document.getElementById("manualForm").style.display = "block";
+            document.getElementById("result").style.display = "block";
+        });
+
+        document.getElementById("useLocationBtn").addEventListener("click", function () {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function (position) {
+                        document.getElementById("latitude").value = position.coords.latitude;
+                        document.getElementById("longitude").value = position.coords.longitude;
+                        document.getElementById("locationForm").submit();
+                    },
+                    function (error) {
+                        alert("Error getting location: " + error.message);
+                    });
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        });
+
+        document.getElementById("changeloc").addEventListener("click", function(){
+            document.getElementById("result").reset();
+        });
+
+        document.getElementById("manualForm").reset();
+
+
+    </script>
+
+    <%- include('./partials/footer.ejs') %>
