@@ -6,18 +6,18 @@ Users can either use their current location or manually enter coordinates to rec
 
 # Features
 
-- 📍 Check UV Index using your current location
-- 🌍 Enter latitude and longitude manually
-- ☀️ Real-time UV Index using the OpenUV API
-- 🧴 Personalized sun protection recommendations
-- 🌙 Light/Dark mode toggle
-- 📱 Responsive design for desktop and mobile devices
-- ❓ Interactive FAQ section with expandable answers
-- 🖼️ Modern UI with Bootstrap and custom CSS
+- Check UV Index using your current location
+- Enter latitude and longitude manually
+- Real-time UV Index using the OpenUV API
+- Personalized sun protection recommendations
+- Light/Dark mode toggle
+- Responsive design for desktop and mobile devices
+- Interactive FAQ section with expandable answers
+- Modern UI with Bootstrap and custom CSS
 
 ---
 
-# 🛠️ Tech Stack
+# Tech Stack
 
 # Frontend
 - HTML5
@@ -46,7 +46,7 @@ Users can either use their current location or manually enter coordinates to rec
 
 ---
 
-## 🚀 Installation
+# Installation
 
 Clone the repository
 
@@ -86,7 +86,7 @@ http://localhost:3000
 
 ---
 
-# 📋 How It Works
+# How It Works
 
 1. Open the application.
 2. Choose one of the following:
@@ -100,7 +100,7 @@ http://localhost:3000
 
 ---
 
-## 📚 What I Learned
+# What I Learned
 
 This project helped me understand:
 
@@ -117,7 +117,7 @@ This project helped me understand:
 
 ---
 
-# 🙏 Acknowledgements
+# Acknowledgements
 
 This project was developed as part of **Angela Yu's Complete Full-Stack Web Development Bootcamp** on Udemy.
 
