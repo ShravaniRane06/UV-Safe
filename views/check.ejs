@@ -34,7 +34,7 @@
                             <%= uv %>
                         </h1>
                         <div id="checkbox">
-                        <% if(uv>=0 && uv<=2) {%>
+                        <% if(uv>=0 && uv<3) {%>
                         <h3 class="display-7 fw-bold">Low</h3>
                         <div class="row ">
                          <div class="col-lg-6 ">
@@ -50,7 +50,7 @@
                          </div>
                         </div>
                         <% } %>
-                        <% if(uv>=3 && uv<=5) {%>
+                        <% if(uv>=3 && uv<6) {%>
                         <h3 class="display-7 fw-bold">Medium</h3>
                         <div class="row ">
                          <div class="col-lg-6 ">
@@ -68,7 +68,7 @@
                          </div>
                          </div>
                         <% } %>
-                        <% if(uv>=6 && uv<=7) {%>
+                        <% if(uv>=6 && uv<8) {%>
                         <h3 class="display-7 fw-bold">High</h3>
                          <div class="row ">
                          <div class="col-lg-6 ">
@@ -87,7 +87,7 @@
                          </div>
                          </div>
                         <% } %>
-                        <% if(uv>=8 && uv<=10) {%>
+                        <% if(uv>=8 && uv<11) {%>
                         <h3 class="display-7 fw-bold">Very High</h3>
                          <div class="row ">
                          <div class="col-lg-6 ">
